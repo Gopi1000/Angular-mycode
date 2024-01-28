@@ -1,0 +1,21 @@
+nav{
+    background-attachment: fixed;
+}
+.color{
+    background-color: rgba(47, 23, 15, 0.9);;
+}
+
+span.italic {
+    font-style: italic;
+    color: lightgray;
+  }
+
+  .flag{
+      width: 25px;
+
+  }
+
+  .cur-pointer{
+      cursor: pointer;
+  }
+

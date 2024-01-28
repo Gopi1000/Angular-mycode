@@ -1,0 +1,292 @@
+<div id="layoutSidenav">
+
+
+  <div id="layoutSidenav_nav">
+    <app-side-nav-bar></app-side-nav-bar>
+  </div>
+
+  <div id="layoutSidenav_content">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <br>
+        <h1 class="text-center">Employee List</h1>
+        <ol class="breadcrumb mb-2">
+        </ol>
+        <br>
+
+        <form autocomplete="off">
+          <div class="row">
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="search" name="search" [(ngModel)]="searchText"
+                placeholder="search">
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                data-bs-whatever="@mdo" (click)="openPop2()">Add Employee</button>
+            </div>
+          </div>
+        </form>
+        <br>
+
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Mobile No</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Role</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let details of UserList | employee:searchText | paginate: { itemsPerPage: 5, currentPage: p } ;let i=index">
+              <th scope="row">{{1+i}}</th>
+              <td>{{details.firstName}} {{details.lastName}}</td>
+              <td>{{details.mobilenumber}}</td>
+              <td>{{details.city}}</td>
+              <td>{{details.state}}</td>
+              <td>{{details.userType}}</td>
+
+
+
+              <td>
+                <button type="button" class="btn btn-info" (click)="View(details.id)">view</button>
+              </td>
+
+              <td>
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  data-bs-whatever="@mdo" (click)="openPopup()" (click)="updateUser(details)">Update</button>
+              </td>
+
+              <td>
+                <button class="btn btn-danger" style="margin-left: 10px" (click)="deleteUser(details)"> Delete</button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+          [ngStyle]="{'display':displayStyle2}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="text-center">Add Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form (ngSubmit)="onSubmits(userForm)" #userForm="ngForm">
+                  <div class="row">
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">First Name</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName"
+                        [(ngModel)]="add.firstName">
+                    </div>
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="add.lastName">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">E-mail</label>
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="add.email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                      [(ngModel)]="add.password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Mobile No</label>
+                    <input type="text" class="form-control" id="mobilenumber" name="mobilenumber"
+                      [(ngModel)]="add.mobilenumber">
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">City</label>
+                      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="add.city">
+                    </div>
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">State</label>
+                      <input type="text" class="form-control" id="state" name="state" [(ngModel)]="add.state">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6"><label for="recipient-name" class="col-form-label">User Type</label>
+                      <select class="form-select" id="userType" name="userType" [(ngModel)]="add.userType">
+                        <option>Admin</option>
+                        <option>User</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                      (click)="closePop2()">Close</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                      (click)="closePop2()">Save</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+          [ngStyle]="{'display':displayStyle}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="text-center">Update.</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form (ngSubmit)="onSubmit()">
+
+                  <input type="hidden" class="form-control" [(ngModel)]="adduser.id"
+                    [ngModelOptions]="{standalone: true}">
+
+                  <div class="row">
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">First Name</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName"
+                        [(ngModel)]="adduser.firstName" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName"
+                        [(ngModel)]="adduser.lastName" [ngModelOptions]="{standalone: true}">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">E-mail</label>
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="adduser.email"
+                      [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Mobile No</label>
+                    <input type="text" class="form-control" id="mobilenumber" name="mobilenumber"
+                      [(ngModel)]="adduser.mobilenumber" [ngModelOptions]="{standalone: true}">
+                  </div>
+
+                  <input type="hidden" class="form-control" id="password" name="password" [(ngModel)]="adduser.password"
+                    [ngModelOptions]="{standalone: true}">
+
+                  <div class="row">
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">City</label>
+                      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="adduser.city"
+                        [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="col-md-6 ms-auto"><label for="recipient-name" class="col-form-label">State</label>
+                      <input type="text" class="form-control" id="state" name="state" [(ngModel)]="adduser.state"
+                        [ngModelOptions]="{standalone: true}">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6"><label for="recipient-name" class="col-form-label">User Type</label>
+                      <select class="form-select" id="userType" name="userType" [(ngModel)]="adduser.userType"
+                        [ngModelOptions]="{standalone: true}">
+                        <option>Admin</option>
+                        <option>User</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                      (click)="closePopup()">Close</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                      (click)="closePopup()">Update</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+          [ngStyle]="{'display':displayStyle1}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="text-center">View.</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="assets/image/tomandjerry.jpg" alt="" width="250" height="250" class="img-thumbnail">
+                <br>
+
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <b>Name:</b>
+                  </div>
+                  <div class="col-4">
+                    <b>{{adduser.firstName}} {{adduser.lastName}}</b>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <b>Email:</b>
+                  </div>
+                  <div class="col-4">
+                    <b>{{adduser.email}}</b>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <b>Mobile Number:</b>
+                  </div>
+                  <div class="col-4">
+                    <b>{{adduser.mobilenumber}}</b>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <b>City:</b>
+                  </div>
+                  <div class="col-4">
+                    <b>{{adduser.city}}</b>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <b>State:</b>
+                  </div>
+                  <div class="col-4">
+                    <b>{{adduser.state}}</b>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <b>Role:</b>
+                  </div>
+                  <div class="col-4">
+                    <b>{{adduser.userType}}</b>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="closePop()">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

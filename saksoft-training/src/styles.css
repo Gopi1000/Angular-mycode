@@ -1,0 +1,17 @@
+.invalid-input{
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+
+}
+
+.invalid-input-border{
+    border-color: red !important;
+    /* box-shadow: 0 0 0 0.25rem rgb(207 66 73 / 25%)  !important; */
+}
+
+.required-label::after{
+    content: " *";
+    font-weight: 500;
+    color: red;
+}

@@ -1,0 +1,147 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.register {
+  background: -webkit-linear-gradient(left, #2a21b1, #5dafc5);
+  padding: 10%;
+}
+
+.register-left {
+  text-align: center;
+  color: #fff;
+  margin-top: 5%;
+  margin-left: -15%;
+  float: left;
+}
+
+.register-left input {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 2%;
+  width: 50%;
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #383d41;
+  margin-top: 10%;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+
+.register-right {
+  background: #ffffff;
+  border-top-left-radius: 20% 250%;
+  border-bottom-left-radius: 20% 250%;
+  margin-left: 15%;
+  margin-top: 0%;
+  width: 550px;
+  padding: 22%;
+}
+
+.register-left p {
+  font-weight: lighter;
+  padding: 12%;
+  margin-top: -9%;
+}
+
+.register .register-form {
+  padding: 10%;
+  margin-top: 10%;
+}
+
+.button {
+  float: right;
+  margin-top: -40%;
+  margin-right: -30%;
+  border-radius: 1.5rem;
+  cursor: pointer; 
+}
+
+.heading {
+  text-align: center;
+  margin-top: -30%;
+  margin-bottom: 15%;
+  color: #1d1f22;
+}
+
+#col-1 {
+  float: left;
+  margin-top: -80px;
+  margin-left: -30%;
+  width: 50%;
+}
+
+#col-2 {
+  float: right;
+  margin-top: -80px;
+  margin-right: -5%;
+  width: 50%;
+}
+
+.radio{
+  width: fit-content;
+  padding: 0px 10px;
+}
+
+
+input[type=text],
+[type=dropdown],
+select {
+  width: 150%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid rgb(35, 181, 218);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=password],
+select {
+  width: 150%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid rgb(35, 181, 218);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.reg-btn {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 5%;
+  width: 60%;
+  background: rgb(26, 43, 202);
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10%;
+  margin-bottom: 3%;
+  float: right;
+  cursor: pointer;
+}
+
+.toggle{
+  width: 200px;
+  border-radius: 20px;
+  overflow: hidden; 
+  border: 1px solid rgb(26, 43, 202);
+  background-color: rgb(26, 43, 202);
+} 
+
+.toggle input {
+  display: none;
+}
+
+.toggle label{
+  width: 40%;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  float: left;
+} 
+
+.toggle input:checked+label{
+  background-color: rgb(255, 255, 255);
+  color: rgb(26, 43, 202);
+  border-radius: 25px;
+} 

@@ -1,0 +1,83 @@
+<div id="layoutSidenav">
+
+
+  <div id="layoutSidenav_nav">
+    <app-side-nav-bar></app-side-nav-bar>
+  </div>
+
+  <div id="layoutSidenav_content">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <br>
+        <h1 class="text-center">Book List</h1>
+        <ol class="breadcrumb mb-2">
+        </ol>
+        <br>
+
+        
+
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Book Name</th>
+              <th>Book Author</th>
+              <!-- <th>Add Review</th>
+              <th>Book Review</th>  -->
+              <th>Update Book</th>
+              <th>Delete Book</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of bookList;let i=index">
+              <th scope="row">{{1+i}}</th>
+              <td>{{book.bookName}}</td>
+              <td>{{book.author}}</td>
+
+             <!-- <td>
+                <button (click)="reviewBook(book)" class="btn btn-primary">Add</button>
+              </td> 
+
+              <td><ul *ngFor="let rev of book.reviews">
+                <li>Review : {{rev.reviewTitle}}</li>
+                <li>Rating : {{rev.rating}}</li>
+                <button type="button" (click)="updateReviewList(rev)" class="btn-info">Update</button>
+                <br>
+                <button (click)="deleteReview(rev)" class="btn-danger">Delete</button>
+               </ul> 
+             </td>   -->
+
+              <!-- <td><ul *ngFor="let rev of book.reviews">
+                 <li>Review <input type="text" class="form-control" ngModel #reviewTitle="ngModel" [(ngModel)]="rev.reviewTitle"
+                  name="reviewTitle" required></li>
+                 <li>Rating <input type="text" class="form-control" ngModel #rating="ngModel" [(ngModel)]="rev.rating"
+                  name="rating" required></li>
+                </ul> 
+              </td>   -->
+
+              <!-- <td>
+                <button class="btn btn-primary" (click)="goDetailMe(book)" style="margin-left: 10px"> View</button>
+              </td> -->
+
+              <td>
+                <button (click)="updateBookList(book)" class="btn btn-primary"> Update</button> 
+                <!-- <i class="fa fa-edit" (click)="updateBookList(book)" style="font-size:48px;"></i> -->
+              </td>
+
+              <td>
+                <button (click)="deleteBookList(book)" class="btn btn-danger" style="margin-left: 10px"> Delete</button> 
+                <!-- <i class="fa fa-trash-o" (click)="deleteBookList(book)" style="font-size:48px;color:red"></i> -->
+              </td> 
+
+            </tr>
+          </tbody>
+        </table>
+
+
+
+          
+      </div>
+    </div>
+  </div>
+</div>

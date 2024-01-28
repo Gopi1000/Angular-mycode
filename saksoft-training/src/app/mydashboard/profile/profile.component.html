@@ -1,0 +1,249 @@
+<body>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+
+            <app-side-nav-bar></app-side-nav-bar>
+
+        </div>
+
+        <div id="layoutSidenav_content">
+            <div class="content-wrapper">
+                <div class="container-fluid">
+
+
+
+                    <!------ Include the above in your HEAD tag ---------->
+
+                    <div class="container emp-profile">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="profile-img">
+                                        <img src="assets/image/tomandjerry.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="profile-head">
+                                        <h5>
+                                            {{userObj.firstName}} {{userObj.lastName}}
+                                        </h5>
+                                        <h6>
+                                            Web Developer and Designer
+                                        </h6>
+                                        <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                                    role="tab" aria-controls="home" aria-selected="true">About</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="openPopup()"
+                                        (click)="updateUser(userObj)">Edit Profile</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="profile-work">
+                                        <p>WORK LINK</p>
+                                        <a href="">Website Link</a><br />
+                                        <a href="">Bootsnipp Profile</a><br />
+                                        <a href="">Bootply Profile</a>
+                                        <p>SKILLS</p>
+                                        <a href="">Web Designer</a><br />
+                                        <a href="">Web Developer</a><br />
+                                        <a href="">WordPress</a><br />
+                                        <a href="">WooCommerce</a><br />
+                                        <a href="">PHP, .Net</a><br />
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="tab-content profile-tab" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                            aria-labelledby="home-tab">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{userObj.firstName}} {{userObj.lastName}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Email</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{userObj.email}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Mobile Number</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{userObj.mobilenumber}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>City</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{userObj.city}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>State</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{userObj.state}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Role</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{userObj.userType}}</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="tab-pane fade" id="profile" role="tabpanel"
+                                            aria-labelledby="profile-tab">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Experience</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>Expert</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Hourly Rate</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>10$/hr</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Total Projects</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>230</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>English Level</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>Expert</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Availability</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>6 months</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Your Bio</label><br />
+                                                    <p>Your detail description</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true" [ngStyle]="{'display':displayStyle}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form (ngSubmit)="onSubmit()">
+
+                                        <input type="hidden" class="form-control" [(ngModel)]="adduser.id"
+                                            [ngModelOptions]="{standalone: true}">
+
+                                        <div class="row">
+                                            <div class="col-md-6 ms-auto"><label for="recipient-name"
+                                                    class="col-form-label">First Name</label>
+                                                <input type="text" class="form-control" name="firstName"
+                                                    [(ngModel)]="adduser.firstName"
+                                                    [ngModelOptions]="{standalone: true}">
+                                            </div>
+                                            <div class="col-md-6 ms-auto"><label for="recipient-name"
+                                                    class="col-form-label">Last Name</label>
+                                                <input type="text" class="form-control" name="lastName"
+                                                    [(ngModel)]="adduser.lastName"
+                                                    [ngModelOptions]="{standalone: true}">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">E-mail</label>
+                                            <input type="text" class="form-control" name="email"
+                                                [(ngModel)]="adduser.email" [ngModelOptions]="{standalone: true}">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Mobile No</label>
+                                            <input type="text" class="form-control" name="mobilenumber"
+                                                [(ngModel)]="adduser.mobilenumber"
+                                                [ngModelOptions]="{standalone: true}">
+                                        </div>
+
+                                        <input type="hidden" class="form-control" name="password"
+                                            [(ngModel)]="adduser.password" [ngModelOptions]="{standalone: true}">
+
+                                        <div class="row">
+                                            <div class="col-md-6 ms-auto"><label for="recipient-name"
+                                                    class="col-form-label">City</label>
+                                                <input type="text" class="form-control" name="city"
+                                                    [(ngModel)]="adduser.city" [ngModelOptions]="{standalone: true}">
+                                            </div>
+                                            <div class="col-md-6 ms-auto"><label for="recipient-name"
+                                                    class="col-form-label">State</label>
+                                                <input type="text" class="form-control" name="state"
+                                                    [(ngModel)]="adduser.state" [ngModelOptions]="{standalone: true}">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                (click)="closePopup()">Close</button>
+                                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                                (click)="closePopup()">Update</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+    <!-- <img src="assets/image/angular.png" class="card-img-top" > -->
+    <ng-content select=".card-img-top"></ng-content>
+    <div class="card-body">
+      <!-- <h5 class="card-title">Card title</h5> -->
+      <ng-content select=".card-title"></ng-content>
+      <ng-content select=".card-text"></ng-content>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <ng-content select =".btn-primary"></ng-content>
+    </div>
+  </div>

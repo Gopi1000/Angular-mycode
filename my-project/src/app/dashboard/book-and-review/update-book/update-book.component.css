@@ -1,0 +1,21 @@
+#layoutSidenav {
+    display: flex;
+  }
+  
+  #layoutSidenav #layoutSidenav_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    flex-grow: 1;
+    min-height: calc(100vh - 56px);
+    margin-left: auto;
+  }
+  #layoutSidenav #layoutSidenav_nav {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease-in-out;
+    z-index: 1038;
+    transform: auto;
+  }

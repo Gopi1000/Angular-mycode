@@ -1,0 +1,51 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <app-side-nav-bar></app-side-nav-bar>
+    </div>
+  
+    <div id="layoutSidenav_content">
+      <div class="content-wrapper">
+        <div class="container-fluid">
+  
+          <br>
+  
+          <h1 class="text-center">Update Book</h1>
+  
+          <div class="row">
+            <div class="card col-md-6 offset-md-3 offset-md-3">
+              <div class="row">
+  
+  
+                <div class="card-body" >
+                  <form (ngSubmit)="onSubmit()">
+
+                    <input type="hidden" class="form-control" #bookName="ngModel" [(ngModel)]="userObj.bookId">
+  
+                    <div class="form-group">
+                      <label> Book Name</label>
+                      <input type="text" class="form-control" #bookName="ngModel" [(ngModel)]="userObj.bookName"
+                        name="bookName">
+                    </div>
+                    <br>
+  
+                    <div class="form-group">
+                      <label> Author Name</label>
+                      <input type="text" class="form-control" #bookName="ngModel" [(ngModel)]="userObj.author"
+                        name="author">
+                    </div>
+                    <br>
+  
+                    <br />
+                    <button class="btn btn-info" type="submit">Update</button>
+  
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>

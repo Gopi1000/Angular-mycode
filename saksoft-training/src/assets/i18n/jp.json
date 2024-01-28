@@ -1,0 +1,10 @@
+{
+    "LoginPage": {
+        "Login": "ログインする",
+        "email": "Eメール",
+        "password": "パスワード",
+        "signin": "サインイン",
+        "rememberme": "私を覚えてますか",
+        "forgotpassword": "パスワードをお忘れですか"
+    }
+}

@@ -1,0 +1,138 @@
+<section class="gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration">
+          <div class="card-body p-4 p-md-5">
+            <div class="py-2 text-center">
+              <img class="d-block mx-auto mb-4" src="assets/image/saksoft.png" alt="" width="150" height="35">
+              <h2>Registration Form</h2>
+            </div>
+            <br>
+
+            <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+              <div class="row g-3">
+
+                <div class="col-sm-6">
+                  <label for="firstName">First name</label>
+                  <input type="text" id="firstName" name="firstname" class="form-control" maxlength="25"
+                    minlength="1" pattern="[a-zA-Z ]*" required #firstName="ngModel" [(ngModel)]="addbook.firstName">
+                  <span style="color:red" *ngIf="!firstName.valid && firstName.touched">please enter valid input</span>
+
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName">Last name</label>
+                  <input type="text" id="lastName" name="lastName" class="form-control" maxlength="25"
+                    minlength="1" pattern="[a-zA-Z ]*" required #lastName="ngModel" [(ngModel)]="addbook.lastName">
+                  <span style="color:red" *ngIf="!lastName.valid && lastName.touched">please enter valid input</span>
+                </div>
+
+                <!-- <div class="col-12">
+                  <label for="username">User name</label>
+                  <input type="text" id="username" name="username" ngModel class="form-control">
+               </div> -->
+
+                <div class="col-12">
+                  <label for="email">Email <span class="text-muted"></span></label>
+                  <input type="text" id="email" name="email" class="form-control" required email
+                    #email="ngModel" [(ngModel)]="addbook.email">
+                  <span style="color:red" *ngIf="!email.valid && email.touched">please enter valid email</span>
+
+                </div>
+
+                <div class="col-12">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" class="form-control" maxlength="8"
+                    minlength="6" required #password="ngModel" [(ngModel)]="addbook.password">
+                  <!-- <div *ngIf="password.invalid && (password.touched || password.dirty)" class="invalid-input">
+                  <span *ngIf="password.errors?.minlength">this field is need</span>
+                  </div> -->
+                  <span style="color:red" *ngIf="!password.valid && password.touched">please enter 6-8 chars only</span>
+                  <!-- {{password.errors | json}} -->
+                </div>
+
+                <div class="col-12">
+                  <label for="mobilenumber">Mobile Number <span class="text-muted"></span></label>
+                  <input type="text" id="mobilenumber" name="mobilenumber" class="form-control"  maxlength="10"
+                  minlength="10" pattern="^((\\+91-?)|0)?[0-9]{10}$" required number #mobilenumber="ngModel" [(ngModel)]="addbook.mobilenumber">
+                  <span style="color:red" *ngIf="!mobilenumber.valid && mobilenumber.touched">Enter valid mobile number</span>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="city">City<span class="text-muted"></span></label>
+                  <input type="text" id="city" name="city" class="form-control" required
+                    #city="ngModel" [(ngModel)]="addbook.city">
+                  <span style="color:red" *ngIf="!city.valid && city.touched">Enter value</span>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="state">State<span class="text-muted"></span></label>
+                  <input type="text" id="state" name="state" class="form-control" required 
+                    #state="ngModel" [(ngModel)]="addbook.state">
+                  <span style="color:red" *ngIf="!state.valid && state.touched">Enter value</span>
+                </div>
+
+                <div class="col-sm-5">
+                  <label for="userType" class="form-label">User Type</label>
+                  <select class="form-select" id="userType" name="userType" required #usertype="ngModel" [(ngModel)]="addbook.userType">
+                    <!-- <span style="color:red" *ngIf="!userType.valid && userType.touched">Enter valid input</span> -->
+                    <option>Admin</option>
+                    <option>User</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+
+                
+
+                <!-- <div class="form-group" ngModelGroup="address"> -->
+                <!-- <div class="col-12">
+                  <label for="city">City<span class="text-muted"></span></label>
+                  <input type="text" id="address" name="city" ngModel class="form-control">
+                  
+                </div>
+    
+                <div class="col-md-5">
+                  <label for="country">Country</label>
+                  <select class="form-select" name="country" [ngModel]="'India'" id="country" required>
+                    <option value="">Choose...</option>
+                    <option *ngFor="let c of countryList">
+                      {{ c.countryname }}
+                      </option>
+                  </select>
+                  
+                </div>
+    
+                <div class="col-md-4">
+                  <label for="state">State</label>
+                  <select class="form-select" name="state" [ngModel]="'TamilNadu'" id="state" required>
+                    <option value="">Choose...</option>
+                    <option *ngFor="let c of stateList">
+                      {{ c.statename }}
+                      </option>
+                  </select>
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="zip">Pin Code</label>
+                  <input type="text" id="zip" name="zip" ngModel class="form-control" pattern="[0-9]*" maxlength="6" minlength="6" required
+                  #zip="ngModel">
+                  <span style="color: red;" *ngIf="!zip.valid && zip.touched">enter valid pincode</span>
+                 
+                </div> -->
+              </div>
+              <!-- </div> -->
+              <br>
+
+              <button class="w-30 btn btn-primary btn-lg" [disabled]="!userForm.valid" type="submit">Register</button>
+
+              <!-- <button class="w-30 btn btn-primary btn-lg" (click)="setDefaultValue()" type="submit">setvalue</button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

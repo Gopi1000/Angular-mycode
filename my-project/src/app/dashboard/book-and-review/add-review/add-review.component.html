@@ -1,0 +1,100 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <app-side-nav-bar></app-side-nav-bar>
+    </div>
+
+    <div id="layoutSidenav_content">
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-12 col-lg-9 col-xl-7">
+                        <div class="card shadow-2-strong card-registration">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="py-2 text-center">
+                                    <h2>Add Review</h2>
+                                </div>
+                                <br>
+                                <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+                                    <div class="row g-3">
+                                        <div class="col-sm-3">
+                                            <label for="reviews.reviewTitle" class="form-label">Review
+                                                Title:</label>
+                                            <select class="form-select" id="reviews.reviewTitle"
+                                                name="reviews.reviewTitle" required #reviewTitle="ngModel"
+                                                [(ngModel)]="userObj.reviewTitle">
+                                                <option>Best Book</option>
+                                                <option>Moderate Book</option>
+                                                <option>Bad Book</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid country.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <label for="rating" class="form-label">Rating: </label>
+                                            <select class="form-select" id="rating" name="rating" required
+                                                #rating="ngModel" [(ngModel)]="userObj.rating">
+                                                <option>1 </option>
+                                                <option>2 </option>
+                                                <option>3 </option>
+                                                <option>4 </option>
+                                                <option>5 </option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid country.
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ngModelGroup="book">
+
+                                            <!-- <div class="form-group">
+                                                <input type="hidden" class="form-control" #bookId="ngModel"
+                                                    [(ngModel)]="userObj.bookId" name="bookId">
+                                            </div> -->
+
+                                            <div class="form-group">
+                                                <input type="hidden" class="form-control" #bookId="ngModel"
+                                                    [(ngModel)]="userObj.bookId" name="bookId">
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div>
+                                                    <label> <b> Book Name: </b></label> {{userObj.bookName}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-info" [disabled]="!userForm.valid" type="submit">Add
+                                            Review</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <table class="table table-sm">
+                                        <thead>
+                                          <tr>
+                                            <th>S.No</th>
+                                            <th>review</th>
+                                            <th>rating</th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr *ngFor="let rev of reviewList;let i=index">
+                                            <th scope="row">{{1+i}}</th>
+                                            <td>{{rev.reviewTitle}}</td>
+                                            <td>{{rev.rating}}</td>
+                              
+                                      
+                              
+                                          </tr>
+                                        </tbody>
+                                      </table> -->

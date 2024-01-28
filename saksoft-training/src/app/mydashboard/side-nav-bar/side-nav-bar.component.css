@@ -1,0 +1,54 @@
+.sb-sidenav {
+    height: 100%;                                  
+   }   
+   
+   /* font design style */
+   .sb-sidenav .sb-sidenav-menu .nav {
+     flex-direction: column;
+     flex-wrap: nowrap;
+   } 
+   
+   .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
+     padding: 1.75rem 1rem 0.75rem;
+     font-size: 0.75rem;
+     font-weight: bold;
+     text-transform: uppercase;
+   } 
+   
+   .sb-sidenav .sb-sidenav-menu .nav .nav-link {
+     
+     align-items: center;
+     padding-top: 0.75rem;
+     padding-bottom: 0.75rem;
+     position: relative;
+   }
+   
+   
+   .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
+     margin-left: 1.5rem;
+     flex-direction: column;
+   }
+   
+   /* nav font color */
+   .sb-sidenav-dark {
+     background-color: #000000;
+   }
+    .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+     color: rgba(255, 255, 255, 0.25);
+   }
+   .sb-sidenav-dark .sb-sidenav-menu .nav-link {
+     color: rgba(255, 255, 255, 0.5);
+   }
+
+   .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+    color: rgb(224, 224, 224);
+   }
+
+   .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+     color: rgba(255, 255, 255, 0.25);
+   }
+   .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+     color: rgba(255, 255, 255, 0.25);
+   } 
+   
+   

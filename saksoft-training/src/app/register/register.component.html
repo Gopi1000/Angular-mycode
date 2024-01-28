@@ -1,0 +1,128 @@
+<section class="gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration">
+          <div class="card-body p-4 p-md-5">
+            <div class="py-2 text-center">
+              <h2>Registration Form</h2>
+            </div>
+            <br>
+
+            <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+              <div class="row g-3">
+
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label required-label">First name</label>
+                  <input type="text" id="firstName" class="form-control" maxlength="25" minlength="1"
+                    pattern="[a-zA-Z ]*" #firstName="ngModel"
+                    [ngClass]="(firstName.invalid && (firstName.dirty || firstName.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.firstName" name="firstname" required>
+                  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="invalid-input">
+                    <span *ngIf="firstName.errors?.['required']">This field is required</span>
+                    <span *ngIf="firstName.errors?.['pattern']">please enter valid name</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label required-label">Last name</label>
+                  <input type="text" id="lastName" name="lastName" class="form-control" maxlength="25" minlength="1"
+                    pattern="[a-zA-Z ]*" #lastName="ngModel"
+                    [ngClass]="(lastName.invalid && (lastName.dirty || lastName.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.lastName" required>
+                  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="invalid-input">
+                    <span *ngIf="lastName.errors?.['required']">This field is required</span>
+                    <span *ngIf="lastName.errors?.['pattern']">please enter valid name</span>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label required-label">Email <span class="text-muted"></span></label>
+                  <input type="text" id="email" name="email" class="form-control" #email="ngModel"
+                    [ngClass]="(email.invalid && (email.dirty || email.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.email" required email>
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-input">
+                    <span *ngIf="email.errors?.['required']">This field is required</span>
+                    <span *ngIf="email.errors?.['email']">please enter valid email</span>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="password" class="form-label required-label">Password</label>
+                  <input type="password" id="password" name="password" class="form-control"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{8,}" maxlength="15" minlength="6"
+                    #password="ngModel"
+                    [ngClass]="(password.invalid && (password.dirty || password.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.password" required>
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-input">
+                    <span *ngIf="password.errors?.['required']">This field is required</span>
+                    <span *ngIf="password.errors?.['pattern']">password must be 8 character only, at least one uppercase
+                      letter, one lowercase letter, one digit,</span>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="mobilenumber" class="form-label required-label">Mobile Number <span
+                      class="text-muted"></span></label>
+                  <input type="text" id="mobilenumber" name="mobilenumber" class="form-control" maxlength="20"
+                    minlength="10" pattern="^(?:(?:(\+|0{0,2}|\())91(\s*[\)\- ]\s*)?|[0]?)?[789]\d{9}$"
+                    #mobilenumber="ngModel"
+                    [ngClass]="(mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.mobilenumber" required number>
+                  <div *ngIf="mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched)"
+                    class="invalid-input">
+                    <span *ngIf="mobilenumber.errors?.['required']">This field is required</span>
+                    <span *ngIf="mobilenumber.errors?.['pattern']">please enter valid mobile number</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="city" class="form-label required-label">City<span class="text-muted"></span></label>
+                  <input type="text" id="city" name="city" class="form-control" pattern="[a-zA-Z ]*" #city="ngModel"
+                    [ngClass]="(city.invalid && (city.dirty || city.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.city" required>
+                  <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-input">
+                    <span *ngIf="city.errors?.['required']">This field is required</span>
+                    <span *ngIf="city.errors?.['pattern']">please enter valid city</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="state" class="form-label required-label">State<span class="text-muted"></span></label>
+                  <input type="text" id="state" name="state" class="form-control" #state="ngModel" pattern="[a-zA-Z ]*"
+                    [ngClass]="(state.invalid && (state.dirty || state.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.state" required>
+                  <div *ngIf="state.invalid && (state.dirty || state.touched)" class="invalid-input">
+                    <span *ngIf="state.errors?.['required']">This field is required</span>
+                    <span *ngIf="state.errors?.['pattern']">please enter valid state</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-5">
+                  <label for="userType" class="form-label required-label">User Type</label>
+                  <select class="form-select" id="userType" name="userType" #userType="ngModel"
+                    [ngClass]="(userType.invalid && (userType.dirty || userType.touched))?'invalid-input-border':''"
+                    [(ngModel)]="adduser.userType" required>
+                    <div *ngIf="userType.invalid && (userType.dirty || userType.touched)" class="invalid-input">
+                      <span *ngIf="userType.errors?.['required']">This field is required</span>
+                    </div>
+                    <option>Admin</option>
+                    <option>User</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <button class="w-30 btn btn-primary btn-lg" [disabled]="!userForm.valid" (click)="registerme()"
+                type="submit">Register</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

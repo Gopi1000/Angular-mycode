@@ -1,0 +1,52 @@
+<body>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <app-side-nav-bar></app-side-nav-bar>
+    </div>
+
+    <div id="layoutSidenav_content">
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <br>
+          <h1 class="text-center">Employee List</h1>
+          <ol class="breadcrumb mb-2">
+          </ol>
+          <br>
+
+          <form autocomplete="off">
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="search" name="search" [(ngModel)]="searchText"
+                placeholder="search">
+            </div>
+          </form>
+          <br>
+
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let emp of employeeList | employee:searchText | paginate: { itemsPerPage: 3, currentPage: p }; let i=index ">
+                <th scope="row">{{1+i}}</th>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.phoneNumber}}</td>
+                <td>{{emp.emailaddress}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+      </div>
+    </div>
+  </div>
+</body>

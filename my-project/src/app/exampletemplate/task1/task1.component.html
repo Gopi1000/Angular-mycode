@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <title>Task 1</title>
+  <link rel="stylesheet" href="css/style1.css"> -->
+</head>
+
+<body>
+
+  <div class="bg-img">
+    <div class="topnav">
+      <a href="l">Login</a>
+      <a href="s">Sign Up</a>
+      <a href="h">Help</a>
+      <a href="b">Become a Host</a>
+      <a>
+        <img class="topleft" src="images/sak.png" alt="" width="150" height="35">
+      </a>
+    </div>
+
+    <form action="/action_page.php" class="container">
+      <h2>Book unique homes and experiences</h2>
+
+      <label for="email"><b>WHERE</b></label>
+      <input type="text" placeholder="Anywhere" name="email" required>
+
+      <div class="grid-container">
+        <label for="checkin"><b>CHECK IN:</b></label>
+        <label for="checkin"><b>CHECK OUT:</b></label>
+
+        <input type="date" id="chechin" name="birthday">
+        <input type="date" id="chechout" name="birthday">
+      </div>
+
+      <label for="cars"><b>GUESTS:</b></label>
+      <select type="dropdown" name="cars" id="cars">
+        <option value="volvo">1 Guests</option>
+        <option value="saab">2 Guests</option>
+        <option value="opel">3 Guests</option>
+      </select>
+
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </div>
+</body>
+
+</html>

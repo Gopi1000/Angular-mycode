@@ -1,0 +1,86 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="">
+        <img src="assets/image/saksoft.png" alt="" width="150" height="35">
+      </a>
+      <div class="navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link active" routerLink="#">About Me</a>
+          </li>
+          <!-- <li class="nav-item"   routerLinkActive="active">
+          <a class="nav-link" routerLink="" [skipLocationChange]="true">Demo1</a>
+        </li>
+        <li class="nav-item"   routerLinkActive="active">
+          <a class="nav-link" routerLink="" [skipLocationChange]="true">Demo2</a>
+        </li>
+        <li class="nav-item"   routerLinkActive="active">
+          <a class="nav-link" routerLink="" [skipLocationChange]="true">Demo3</a>
+        </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Demo
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/demo">Angular Demo1</a></li>
+              <li><a class="dropdown-item" routerLink="/demo1">Angular Demo2</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" routerLink="/test">Angular Demo3</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Template Task
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/task1">Task1</a></li>
+              <li><a class="dropdown-item" routerLink="/task2">Task2</a></li>
+              <li><a class="dropdown-item" routerLink="/task3">Task3</a></li>
+              <li><a class="dropdown-item" routerLink="/task4">Task4</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+
+        <!-- <div class="dropdown" *ngIf="selectedLanguage"> 
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="flag" [src]="selectedLanguage.flag"/> {{selectedLanguage.language}}
+          </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li *ngFor="let 1 of languages" class="cur-pointer"><a class="dropdown-item"><img class="flag" [src]="1.flag"/> {{1.language}}</a></li>
+            </ul>
+        </div> -->
+
+        
+        <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form> -->
+
+        <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form> -->
+
+        <div class="text-end">
+          <div *ngIf="userObj;else loginElse">
+            <span style="color:rgb(245, 244, 244)"> Hi, {{userObj.firstName}} {{userObj.lastName}}  </span>
+            <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
+          </div>
+
+          <ng-template #loginElse>
+            <button type="button" class="btn btn-outline-light me-2" (click)="goLoginMe()">Login</button>
+            <button type="button" class="btn btn-warning" (click)="goRegisterMe()">Sign-up</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </nav>
+</body>

@@ -1,0 +1,142 @@
+<h1>{{title}}</h1>
+
+
+<h1>data binding</h1>
+
+
+<div>
+    
+    <input type="text" style="border-color:aqua" class="form-control" [(ngModel)] ="bookauthor"/>  <!--tow-way binding-->
+    <br><br>
+</div>
+
+<div>
+    <p>{{'hii gopi'}} book id: {{bookid}} </p>
+    <br><br>
+    <p>book name: {{bookname}} </p>
+    <br><br>
+    <p>book author: {{bookauthor}} </p>     <!--  string interpulation  -->
+    <br><br>
+    <p>book status: {{bookstatus}} </p>
+    <br><br>
+
+</div>
+
+    <div>
+       <button type="button" class="btn btn-success" [disabled]= "btntoggle" (click)="onbutton()" >search</button>    <!--property binding include to event binding-->
+    </div>
+
+ <input type="text" style="border-color:aqua" class="form-control" [(ngModel)] ="firstname"/>   <!-- twowaybinding -->
+
+
+{{angularlogo}} 
+
+<br>
+
+<img src = "{{angularlogo}}">
+
+<img [src] ="angularlogo">
+
+<h1>{{firstname}}</h1>
+
+<input [disabled]="disabledinput" type="text" value ="gopikannan" >
+
+<div>
+    <p> enter yourname : {{firstname}}</p>
+</div>
+
+<div>
+    <button type="button" class="btn btn-success" (click)="clickbutton()"> button</button>
+</div>
+
+                           <!-- ngFor using index first last even odd  CSS using ngclass color -->
+<h1>ngFor and switchcase</h1>
+
+<ul>
+<li *ngFor="let getdetails of details;
+
+ index as i;  
+ let first = first
+ let last  = last
+ let even  =  even  
+ let odd   =  odd"
+ 
+ [ngClass]="{firststyle:first,secondstyle:last}"
+ >
+
+ <div [ngSwitch]="getdetails.location">
+    <div *ngSwitchCase="'trichy'">                                
+   {{i}} - {{getdetails.name}}
+   </div>
+   <div *ngSwitchDefault>                                 <!-- ngswitchcase and ngswitchdefault -->
+   Default - {{getdetails.name}}
+    </div>
+   </div>
+
+  <!-- {{i}} {{even}} {{getdetails.name}}  {{getdetails.location}} -->
+ 
+</li>
+</ul>
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>LOCATION</th>
+    </tr>
+    <tr *ngFor="let getdetails of details">
+        <td>{{getdetails.id}}</td>
+        <td>{{getdetails.name}}</td>
+        <td>{{getdetails.location}}</td>
+    </tr>
+</table>
+
+<br>
+
+<ul *ngFor="let collection of MyWeb">
+    <li>
+       {{collection.type}}
+    </li>
+    <ul>
+        <li *ngFor="let mydata of collection.courses">
+            {{mydata.name}}
+        </li>
+    </ul>
+</ul>
+
+
+
+                                            <!--  ngif and ng container and ng template -->
+
+<!-- <div *ngIf="isLoggedIn; else logout">
+    <h1>hello Gopikannan</h1>
+</div> -->
+<button (click)="login()">Login</button>
+<button (click)="logout1()">logout</button>   
+<ng-container *ngIf="isLoggedIn; then loggedIn; else logout">
+
+</ng-container>
+
+ <ng-template #loggedIn>                                     
+    <h1>welcome gopi</h1>
+</ng-template>
+
+<ng-template #logout>
+    <h1>please login</h1>
+</ng-template>
+
+
+<br>
+<p>servece dependencey</p>
+<div>
+    <p>
+        Counter = {{_maths.Counter}}
+    </p>
+</div>
+<button class="btn btn-warning" (click)="Increase()">Increase</button>
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+    "LoginPage":{
+        "Login": "लॉग इन करें",
+        "email":"ईमेल",
+        "password":"पासवर्ड",
+        "signin":"साइन इन करें",
+        "rememberme" :"मुझे याद रखें",
+        "forgotpassword":"पासवर्ड भूल गए"
+    }
+}

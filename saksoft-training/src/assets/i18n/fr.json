@@ -1,0 +1,10 @@
+{
+    "LoginPage": {
+        "Login": "connexion",
+        "email": "e-mail",
+        "password": "le mot de passe",
+        "signin": "s'identifier",
+        "rememberme": "souviens-toi de moi",
+        "forgotpassword": "Mot de passe oublié"
+    }
+}

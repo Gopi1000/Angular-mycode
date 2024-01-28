@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+h3 {
+    color: white;
+    font-weight: bold;
+}
+.title {
+    text-align: center;
+    vertical-align: bottom;
+    background-color:lightskyblue;
+    height: 40px;
+    padding-top: 5px;
+}
+.columnPan {
+    height:80vh; 
+    border-color: lightslategray; 
+    border-style: solid;   
+}

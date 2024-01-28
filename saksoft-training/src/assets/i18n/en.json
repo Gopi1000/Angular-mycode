@@ -1,0 +1,25 @@
+{
+    "LoginPage":{
+        "Login": "Login",
+        "email":"email",
+        "password":"password",
+        "signin":"Sign In",
+        "rememberme" :"Remember Me",
+        "forgotpassword":"Forgot Password"
+    },
+
+    "registerpage":{
+        "registration form":"Registration Form",
+        "firstname":"First Name",
+        "lastname":"Last Name",
+        "email":"Email",
+        "password":"Password",
+        "mobilenumber":"Mobile Number",
+        "city":"City",
+        "state":"State",
+        "usertype":"User Type",
+        "admin":"Admin",
+        "user":"User",
+        "register":"Register"
+    }
+}

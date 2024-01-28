@@ -1,0 +1,51 @@
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-side-nav-bar></app-side-nav-bar>
+  </div>
+
+  <div id="layoutSidenav_content">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+
+        <br>
+
+        <h1 class="text-center">Create Book</h1>
+
+        <div class="row">
+          <div class="card col-md-6 offset-md-3 offset-md-3">
+            <div class="row">
+
+
+              <div class="card-body">
+                <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+
+                  <div class="form-group">
+                    <label> Book Name</label>
+                    <input type="text" class="form-control" ngModel #bookName="ngModel" [(ngModel)]="addbook.bookName"
+                      name="bookName" required>
+                      <span style="color:red" *ngIf="!bookName.valid && bookName.touched">please enter book</span>
+                  </div>
+                  <br>
+
+                  <div class="form-group">
+                    <label> Author Name</label>
+                    <input type="text" class="form-control" ngModel #author="ngModel" [(ngModel)]="addbook.author"
+                      name="author" required>
+                      <span style="color:red" *ngIf="!author.valid && author.touched">please enter author</span>
+                  </div>
+                  <br>
+
+                  <br />
+                  <button class="btn btn-info" [disabled]="!userForm.valid" type="submit">Submit</button>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

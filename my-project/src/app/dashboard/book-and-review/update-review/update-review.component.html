@@ -1,0 +1,49 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <app-side-nav-bar></app-side-nav-bar>
+    </div>
+  
+    <div id="layoutSidenav_content">
+      <div class="content-wrapper">
+        <div class="container-fluid">
+  
+          <br>
+  
+          <h1 class="text-center">Update Review</h1>
+  
+          <div class="row">
+            <div class="card col-md-6 offset-md-3 offset-md-3">
+              <div class="row">
+  
+  
+                <div class="card-body" >
+                  <form (ngSubmit)="onSubmit()">
+
+                    <input type="hidden" class="form-control" #reviewname="ngModel" [(ngModel)]="userObj.reviewId">
+
+                    <div class="form-group">
+                      <label>Review</label>
+                      <input type="text" class="form-control" name="reviewTitle" #bookName="ngModel" [(ngModel)]="userObj.reviewTitle">
+                    </div>
+                    <br>
+  
+                    <div class="form-group">
+                      <label>Rating</label>
+                      <input type="text" class="form-control" name="rating" #bookName="ngModel" [(ngModel)]="userObj.rating">
+                    </div>
+                    <br>
+  
+                    <br />
+                    <button class="btn btn-info" type="submit">Update</button>
+  
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>

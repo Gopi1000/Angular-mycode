@@ -1,0 +1,18 @@
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Customer Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cus of customerList let i=index">
+      <th scope="row">{{1+i}}</th>
+      <td>{{cus.customername}}</td>
+      <td>
+        <button (click)="viewcustomer(cus)" class="btn btn-success"> View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
